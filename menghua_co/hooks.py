@@ -72,11 +72,6 @@ required_apps = ["erpnext", "thai_tax"]
 # website_generators = ["Web Page"]
 
 # Jinja
-jinja = {
-    "methods": [
-        "menghua_co.utils.amount_in_bahttext",
-    ],
-}
 # ----------
 
 # add methods and filters to jinja environment
