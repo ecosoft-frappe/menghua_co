@@ -242,3 +242,12 @@ required_apps = ["frappe/erpnext", "kittiu/thai_tax", "kittiu/sales_billing"]
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+doctype_js = {
+    "Sales Billing": "public/js/sales_billing.js",
+}
+
+doc_events = {
+    "Sales Billing": {
+        "on_submit": "menghua_co.custom.sales_billing.create_payment_entry"
+    }
+}
