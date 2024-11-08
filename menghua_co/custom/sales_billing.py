@@ -12,23 +12,24 @@ def make_payment_entry(source_name, target_doc=None):
         target.party_type = "Customer" 
         target.party = source.customer 
         target.party_name = source.customer_name
-        target.paid_to = get_party_account("Customer", source.customer, source.company)
+        target.paid_to = frappe.get_value("Company", source.company, "default_cash_account") or frappe.get_value("Company", source.company, "default_bank_account")
         target.paid_from = get_party_account("Customer", source.customer, source.company)
         target.paid_amount = source.total_billing_amount
+        target.received_amount = target.paid_amount
 
+    # Append references and log for debugging
         for line in source.sales_billing_line:
-            if line.sales_invoice:  
-                target.append(
-                    "references",
-                    dict(
-                        reference_doctype="Sales Invoice",  
-                        reference_name=line.sales_invoice,  
-                        total_amount=line.grand_total,  
-                        paid_amount=line.grand_total,  
-                        outstanding_amount=line.outstanding_amount,
-                    ),
-                )
+            if line.sales_invoice:
+                reference = {
+                "reference_doctype": "Sales Invoice",
+                "reference_name": line.sales_invoice,
+                "total_amount": line.grand_total,
+                "paid_amount": line.grand_total,
+                "outstanding_amount": line.outstanding_amount,
+            }
+            target.append("references", reference)
 
+    # Create the payment entry document
     doclist = get_mapped_doc(
         "Sales Billing",  
         source_name,  
@@ -43,4 +44,9 @@ def make_payment_entry(source_name, target_doc=None):
         set_missing_values,
     )
 
+    # Save to commit changes
+    if doclist:
+        doclist.save(ignore_permissions=True)
+
     return doclist
+
