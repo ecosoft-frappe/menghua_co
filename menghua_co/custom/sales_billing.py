@@ -30,7 +30,7 @@ def make_payment_entry(source_name, target_doc=None):
 
     doclist = get_mapped_doc(
         "Sales Billing",  
-        source_name,  
+        source_name,   
         {
             "Sales Billing": {
                 "doctype": "Payment Entry",  
@@ -41,10 +41,6 @@ def make_payment_entry(source_name, target_doc=None):
         target_doc, 
         set_missing_values,
     )
-
-    # Save to commit changes
-    if doclist:
-        doclist.save(ignore_permissions=True)
 
     return doclist
 
