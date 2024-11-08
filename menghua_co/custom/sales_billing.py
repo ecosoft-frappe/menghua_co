@@ -17,7 +17,6 @@ def make_payment_entry(source_name, target_doc=None):
         target.paid_amount = source.total_billing_amount
         target.received_amount = target.paid_amount
 
-    # Append references and log for debugging
         for line in source.sales_billing_line:
             if line.sales_invoice:
                 reference = {
@@ -29,7 +28,6 @@ def make_payment_entry(source_name, target_doc=None):
             }
             target.append("references", reference)
 
-    # Create the payment entry document
     doclist = get_mapped_doc(
         "Sales Billing",  
         source_name,  
