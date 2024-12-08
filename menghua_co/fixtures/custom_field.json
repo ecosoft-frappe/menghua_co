@@ -1,40 +1,51 @@
 [
     {
-     "doctype": "Custom Field",
-     "dt": "Company",
-     "fieldname": "custom_mh_setting",
-     "fieldtype": "Tab Break",
-     "insert_after": "default_operating_cost_account",
-     "label": "MH Setting",
-     "name": "Company-custom_mh_setting"
+        "doctype": "Custom Field",
+        "dt": "Company",
+        "fieldname": "custom_mh_setting",
+        "fieldtype": "Tab Break",
+        "insert_after": "default_operating_cost_account",
+        "label": "MH Setting",
+        "name": "Company-custom_mh_setting"
     },
     {
-     "description": "การสร้าง Work Order จาก Sales Order ระบบจะสร้าง Manufacturing Order \nให้โดยอัตโนมัติ",
-     "doctype": "Custom Field",
-     "dt": "Company",
-     "fieldname": "auto_mo_from_so",
-     "fieldtype": "Check",
-     "insert_after": "custom_mh_setting",
-     "label": "Enable auto-create manufacturing order from Sales Order",
-     "name": "Company-auto_mo_from_so"
+        "description": "การสร้าง Work Order จาก Sales Order ระบบจะสร้าง Manufacturing Order \nให้โดยอัตโนมัติ",
+        "doctype": "Custom Field",
+        "dt": "Company",
+        "fieldname": "auto_mo_from_so",
+        "fieldtype": "Check",
+        "insert_after": "custom_mh_setting",
+        "label": "Enable auto-create manufacturing order from Sales Order",
+        "name": "Company-auto_mo_from_so"
     },
     {
-     "description": "การสร้าง Work Order จาก Material Request ระบบจะสร้าง Manufacturing Order \nให้โดยอัตโนมัติ",
-     "doctype": "Custom Field",
-     "dt": "Company",
-     "fieldname": "auto_mo_from_mr",
-     "fieldtype": "Check",
-     "insert_after": "custom_column_checkbox",
-     "label": "Enable auto-create manufacturing order from Material Request",
-     "name": "Company-auto_mo_from_mr"
+        "description": "การสร้าง Work Order จาก Material Request ระบบจะสร้าง Manufacturing Order \nให้โดยอัตโนมัติ",
+        "doctype": "Custom Field",
+        "dt": "Company",
+        "fieldname": "auto_mo_from_mr",
+        "fieldtype": "Check",
+        "insert_after": "custom_column_checkbox",
+        "label": "Enable auto-create manufacturing order from Material Request",
+        "name": "Company-auto_mo_from_mr"
     },
     {
-     "doctype": "Custom Field",
-     "dt": "Company",
-     "fieldname": "custom_column_checkbox",
-     "fieldtype": "Column Break",
-     "insert_after": "auto_mo_from_so",
-     "module": "Menghua Co",
-     "name": "Company-custom_column_checkbox"
+        "doctype": "Custom Field",
+        "dt": "Company",
+        "fieldname": "custom_column_checkbox",
+        "fieldtype": "Column Break",
+        "insert_after": "auto_mo_from_so",
+        "module": "Menghua Co",
+        "name": "Company-custom_column_checkbox"
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "Quotation",
+        "fieldname": "custom_delivery_date",
+        "fieldtype": "Date",
+        "insert_after": "valid_till",
+        "reqd": 1,
+        "module": "Menghua Co",
+        "label": "Delivery Date",
+        "name": "Quotation-custom_delivery_date"
     }
-   ]
+]
