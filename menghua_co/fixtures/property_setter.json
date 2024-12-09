@@ -1,0 +1,201 @@
+[
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "item_name",
+  "name": "Purchase Order Item-item_name-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "rate",
+  "name": "Purchase Order Item-rate-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "amount",
+  "name": "Purchase Order Item-amount-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "received_qty",
+  "name": "Purchase Order Item-received_qty-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "received_qty",
+  "name": "Purchase Order Item-received_qty-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "warehouse",
+  "name": "Purchase Order Item-warehouse-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "item_name",
+  "name": "Purchase Order Item-item_name-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "2"
+ },
+ {
+  "doc_type": "Purchase Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "schedule_date",
+  "name": "Purchase Order Item-schedule_date-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "item_code",
+  "name": "Quotation Item-item_code-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "2"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "description",
+  "name": "Quotation Item-description-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "description",
+  "name": "Quotation Item-description-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "2"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "qty",
+  "name": "Quotation Item-qty-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "uom",
+  "name": "Quotation Item-uom-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "actual_qty",
+  "name": "Quotation Item-actual_qty-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "rate",
+  "name": "Quotation Item-rate-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Quotation Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "actual_qty",
+  "name": "Quotation Item-actual_qty-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doc_type": "Sales Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "item_code",
+  "name": "Sales Order Item-item_code-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "2"
+ },
+ {
+  "doc_type": "Sales Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "actual_qty",
+  "name": "Sales Order Item-actual_qty-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doc_type": "Sales Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "rate",
+  "name": "Sales Order Item-rate-columns",
+  "property": "columns",
+  "property_type": "Int",
+  "value": "1"
+ },
+ {
+  "doc_type": "Sales Order Item",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "warehouse",
+  "name": "Sales Order Item-warehouse-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "0"
+ }
+]

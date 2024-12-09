@@ -7,5 +7,9 @@ from frappe.model.document import Document
 
 class ManufacturingOrder(Document):
     def before_submit(self):
-        if self.status == "ร่าง":
-            self.status = "พิมพ์ปก"  
+        if self.mh_status == "ร่าง":
+            self.mh_status = "รอผลิต"
+            
+    def on_cancel(self):
+        self.mh_status = "ยกเลิก"
+        self.db_update()
