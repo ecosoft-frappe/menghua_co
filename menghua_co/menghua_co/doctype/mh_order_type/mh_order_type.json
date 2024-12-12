@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{mh_order_type}",
+ "creation": "2024-12-12 20:42:35.474735",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "mh_order_type"
+ ],
+ "fields": [
+  {
+   "default": "\u0e2b\u0e19\u0e49\u0e32\u0e23\u0e49\u0e32\u0e19",
+   "fieldname": "mh_order_type",
+   "fieldtype": "Select",
+   "label": "MH Order Type",
+   "no_copy": 1,
+   "options": "\u0e2b\u0e19\u0e49\u0e32\u0e23\u0e49\u0e32\u0e19\n\u0e2a\u0e31\u0e48\u0e07\u0e17\u0e33"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-12 21:42:53.648679",
+ "modified_by": "Administrator",
+ "module": "Menghua Co",
+ "name": "MH Order Type",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

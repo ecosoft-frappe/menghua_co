@@ -1,6 +1,50 @@
 [
     {
         "doctype": "Custom Field",
+        "dt": "Sales Order",
+        "fieldname": "custom_mh_order_type",
+        "fieldtype": "Link",
+        "insert_after": "order_type",
+        "label": "MH Order Type",
+        "module": "Menghua Co",
+        "name": "Sales Order-custom_mh_order_type",
+        "options": "MH Order Type"
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "Quotation",
+        "fieldname": "custom_mh_order_type",
+        "fieldtype": "Link",
+        "insert_after": "order_type",
+        "label": "MH Order Type",
+        "module": "Menghua Co",
+        "name": "Quotation-custom_mh_order_type",
+        "options": "MH Order Type"
+    },
+    {
+        "depends_on": "eval:doc.is_sales_item == 1",
+        "doctype": "Custom Field",
+        "dt": "Item",
+        "fieldname": "custom_allow_standard_type",
+        "fieldtype": "Check",
+        "insert_after": "is_sales_item",
+        "label": "Allow Standard Type",
+        "module": "Menghua Co",
+        "name": "Item-custom_allow_standard_type"
+    },
+    {
+        "depends_on": "eval:doc.is_sales_item == 1",
+        "doctype": "Custom Field",
+        "dt": "Item",
+        "fieldname": "custom_allow_custom_type",
+        "fieldtype": "Check",
+        "insert_after": "custom_allow_standard_type",
+        "label": "Allow Custom Type",
+        "module": "Menghua Co",
+        "name": "Item-custom_allow_custom_type"
+    },
+    {
+        "doctype": "Custom Field",
         "dt": "Company",
         "fieldname": "custom_mh_setting",
         "fieldtype": "Tab Break",
@@ -47,5 +91,58 @@
         "module": "Menghua Co",
         "label": "Delivery Date",
         "name": "Quotation-custom_delivery_date"
-    }
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "Warehouse",
+        "fieldname": "custom_mh_detail",
+        "fieldtype": "Section Break",
+        "insert_after": "company",
+        "label": "MH Detail",
+        "name": "Warehouse-custom_mh_detail"
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "Warehouse",
+        "fieldname": "custom_lock",
+        "fieldtype": "Data",
+        "insert_after": "custom_mh_detail",
+        "label": "ล็อค (Lock)",
+        "name": "Warehouse-custom_lock"
+   },
+   {
+        "doctype": "Custom Field",
+        "dt": "Warehouse",
+        "fieldname": "custom_row",
+        "fieldtype": "Data",
+        "insert_after": "custom_lock",
+        "label": "แถว (Row)",
+        "name": "Warehouse-custom_row"
+   },
+   {
+        "doctype": "Custom Field",
+        "dt": "Warehouse",
+        "fieldname": "custom_column_break_mh_detail",
+        "fieldtype": "Column Break",
+        "insert_after": "custom_row",
+        "name": "Warehouse-custom_column_break_mh_detail"
+   },
+   {
+        "doctype": "Custom Field",
+        "dt": "Warehouse",
+        "fieldname": "custom_shelf",
+        "fieldtype": "Data",
+        "insert_after": "custom_column_break_mh_detail",
+        "label": "ชั้น (Shelf)",
+        "name": "Warehouse-custom_shelf"
+   },
+   {
+        "doctype": "Custom Field",
+        "dt": "Warehouse",
+        "fieldname": "custom_block",
+        "fieldtype": "Data",
+        "insert_after": "custom_shelf",
+        "label": "ช่อง (Block)",
+        "name": "Warehouse-custom_block"
+   }
 ]
