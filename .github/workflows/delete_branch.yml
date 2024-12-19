@@ -1,4 +1,3 @@
-
 name: Delete Branch
 
 on:
@@ -10,8 +9,10 @@ jobs:
   worker:
     if: ${{ github.event.pull_request.merged_at == '' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: delete-branch
+      - name: Delete Branch
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
