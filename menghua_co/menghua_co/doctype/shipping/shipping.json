@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{shipping_name}",
+ "creation": "2024-12-18 19:56:08.365311",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "disabled",
+  "shipping_name"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "shipping_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-18 21:22:54.710530",
+ "modified_by": "Administrator",
+ "module": "Menghua Co",
+ "name": "Shipping",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

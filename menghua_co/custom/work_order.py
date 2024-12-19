@@ -32,9 +32,23 @@ def create_manufacturing_order(source_name, target_doc=None, show_message=True):
         
         if source.sales_order:
             sales_order = frappe.get_doc("Sales Order", source.sales_order)
-            target.customer = sales_order.customer  
-            target.delivery_date = sales_order.delivery_date
-        
+    
+        target.customer = sales_order.customer  
+        target.delivery_date = sales_order.delivery_date
+    
+        if not target.get("sales_team"):
+            for d in sales_order.get("sales_team") or []:
+                target.append(
+                "sales_team",
+                {
+                    "sales_person": d.sales_person,
+                    "allocated_percentage": d.allocated_percentage or None,
+                    "allocated_amount": d.allocated_amount,
+                    "commission_rate": d.commission_rate,
+                    "incentives": d.incentives,
+                },
+            )
+                
         elif source.material_request:
             material_request = frappe.get_doc("Material Request", source.material_request)
             target.customer = material_request.customer  
