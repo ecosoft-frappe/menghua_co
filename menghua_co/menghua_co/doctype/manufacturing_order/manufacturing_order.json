@@ -19,6 +19,12 @@
   "sales_order",
   "work_order",
   "material_request",
+  "shipping_address_section",
+  "shipping_address_name",
+  "column_break_ztas",
+  "shipping_address",
+  "sales_team_section",
+  "sales_team",
   "section_item",
   "item_code",
   "item_name",
@@ -50,6 +56,7 @@
   "other_info_section",
   "binding",
   "packaging",
+  "shipping",
   "section_note",
   "note",
   "status_section",
@@ -356,12 +363,54 @@
    "in_standard_filter": 1,
    "label": "MH Status",
    "options": "\u0e23\u0e48\u0e32\u0e07\n\u0e23\u0e2d\u0e1c\u0e25\u0e34\u0e15\n\u0e1e\u0e34\u0e21\u0e1e\u0e4c\u0e1b\u0e01\n\u0e23\u0e30\u0e2b\u0e27\u0e48\u0e32\u0e07\u0e1c\u0e25\u0e34\u0e15\n\u0e2b\u0e48\u0e2d\u0e1e\u0e25\u0e32\u0e2a\u0e15\u0e34\u0e01\n\u0e40\u0e02\u0e49\u0e32\u0e04\u0e25\u0e31\u0e07\n\u0e2a\u0e48\u0e07\u0e2d\u0e2d\u0e01\n\u0e22\u0e01\u0e40\u0e25\u0e34\u0e01"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "shipping_address_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Address"
+  },
+  {
+   "fetch_from": "sales_order.shipping_address",
+   "fieldname": "shipping_address",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ztas",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_order.shipping_address_name",
+   "fieldname": "shipping_address_name",
+   "fieldtype": "Link",
+   "label": "Shipping Address Name",
+   "options": "Address"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sales_team_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Team"
+  },
+  {
+   "fieldname": "sales_team",
+   "fieldtype": "Table",
+   "label": "Sales Team",
+   "options": "Sales Team"
+  },
+  {
+   "fieldname": "shipping",
+   "fieldtype": "Link",
+   "label": "Shipping",
+   "options": "Shipping"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-09 13:13:59.099176",
+ "modified": "2024-12-19 11:39:49.935316",
  "modified_by": "Administrator",
  "module": "Menghua Co",
  "name": "Manufacturing Order",
