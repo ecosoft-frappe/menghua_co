@@ -198,5 +198,16 @@
         "insert_after": "column_break0",
         "label": "Contact",
         "name": "Address-contact"
-   }
+   },
+   {
+        "doctype": "Custom Field",
+        "dt": "Material Request",
+        "fieldname": "created_by",
+        "fieldtype": "Data",
+        "hidden": 1,
+        "in_list_view": 1,
+        "insert_after": "amended_from",
+        "label": "Created By",
+        "name": "Material Request-created_by"
+    }
 ]

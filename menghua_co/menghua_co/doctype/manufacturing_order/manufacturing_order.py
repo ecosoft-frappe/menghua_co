@@ -25,3 +25,11 @@ class ManufacturingOrder(Document):
         if self.docstatus == 1: 
             if self.mh_status in ["ร่าง","ยกเลิก"]:
                 frappe.throw("Invalid MH Status")
+
+    def set_created_by_full_name(self):
+        user = frappe.session.user
+        user_doc = frappe.get_doc("User", user)
+        self.created_by = user_doc.full_name
+
+    def before_insert(self):
+        self.set_created_by_full_name()

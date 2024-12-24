@@ -258,5 +258,8 @@ doctype_js = {
 doc_events = {
     "Work Order": {
         "after_insert": "menghua_co.custom.work_order.auto_create_manufacturing_order"
+    },
+    "Material Request": {
+        "before_insert": "menghua_co.custom.material_request.set_created_by_full_name"
     }
 }

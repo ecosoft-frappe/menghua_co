@@ -346,5 +346,35 @@
     "property": "columns",
     "property_type": "Int",
     "value": "1"
+    },
+    {
+    "doc_type": "Material Request",
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "workflow_state",
+    "name": "Material Request-workflow_state-in_list_view",
+    "property": "in_list_view",
+    "property_type": "Check",
+    "value": "1"
+    },
+    {
+    "doc_type": "Material Request",
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "title",
+    "name": "Material Request-title-in_list_view",
+    "property": "in_list_view",
+    "property_type": "Check",
+    "value": "0"
+    },
+    {
+    "doc_type": "Material Request",
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "workflow_state",
+    "name": "Material Request-workflow_state",
+    "property": "in_list_view",
+    "property_type": "Check",
+    "value": "1"
     }
 ]
