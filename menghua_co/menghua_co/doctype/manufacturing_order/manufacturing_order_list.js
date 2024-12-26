@@ -1,6 +1,6 @@
 frappe.listview_settings["Manufacturing Order"] = {
     add_fields: [
-        "id",   
+        "name",   
         "status",
         "mh_status",            
         "customer_name",    
@@ -8,6 +8,7 @@ frappe.listview_settings["Manufacturing Order"] = {
         "delivery_date",            
         "item_name",      
         "quantity",         
-        "uom"             
+        "uom",
+        "created_by"      
     ],
 };

@@ -4,7 +4,7 @@ app_publisher = "Ecosoft"
 app_description = "Menghua Co\'s ERP"
 app_email = "kittiu@ecosoft.co.th"
 app_license = "mit"
-required_apps = []
+required_apps = ["frappe/erpnext", "frappe/hrms", "ecosoft-frappe/erpnext_thailand", "kittiu/cash_holder_summary"]
 
 # Apps
 # ------------------
@@ -258,5 +258,80 @@ doctype_js = {
 doc_events = {
     "Work Order": {
         "after_insert": "menghua_co.custom.work_order.auto_create_manufacturing_order"
+    },
+    "Material Request": {
+        "before_insert": "menghua_co.custom.material_request.set_created_by_full_name"
     }
 }
+
+fixtures = [
+    {"dt": "Property Setter", "filters": [
+        [
+            "name", "in", [
+                "Purchase Order Item-item_name-in_list_view",
+                "Purchase Order Item-rate-columns",
+                "Purchase Order Item-amount-columns",
+                "Purchase Order Item-received_qty-in_list_view",
+                "Purchase Order Item-received_qty-columns",
+                "Purchase Order Item-warehouse-in_list_view",
+                "Purchase Order Item-item_name-columns",
+                "Purchase Order Item-schedule_date-columns",
+                "Quotation Item-item_code-columns",
+                "Quotation Item-description-in_list_view",
+                "Quotation Item-description-columns",
+                "Quotation Item-qty-columns",
+                "Quotation Item-uom-columns",
+                "Quotation Item-actual_qty-columns",
+                "Quotation Item-rate-columns",
+                "Quotation Item-actual_qty-in_list_view",
+                "Sales Order Item-item_code-columns",
+                "Sales Order Item-actual_qty-in_list_view",
+                "Sales Order Item-rate-columns",
+                "Sales Order Item-warehouse-in_list_view",
+                "Purchase Invoice-supplier_invoice_details-collapsible",
+                "Address-address_type-description",
+                "Address-address_title-description",
+                "Address-address_line1-description",
+                "Address-address_line2-description",
+                "Address-city-description",
+                "Address-county-description",
+                "Address-state-description",
+                "Address-country-description",
+                "Address-pincode-description",
+                "Address-email_id-description",
+                "Address-phone-description",
+                "Address-fax-description",
+                "Expense Claim Detail-amount-columns",
+                "Expense Claim Detail-description-columns",
+                "Material Request-title-in_list_view",
+                "Material Request-workflow_state",
+                "Material Request-main-title_field",
+            ]
+        ]
+    ]},
+    {"dt": "Custom Field", "filters": [
+        [
+            "name", "in", [
+                "Sales Order-custom_mh_order_type",
+                "Quotation-custom_mh_order_type",
+                "Company-custom_mh_setting",
+                "Company-auto_mo_from_so",
+                "Company-auto_mo_from_mr",
+                "Company-custom_column_checkbox",
+                "Quotation-custom_delivery_date",
+                "Warehouse-custom_mh_detail",
+                "Warehouse-custom_lock",
+                "Warehouse-custom_row",
+                "Warehouse-custom_column_break_mh_detail",
+                "Warehouse-custom_shelf",
+                "Warehouse-custom_block",
+                "Expense Claim Detail-custom_section_break_shipping",
+                "Expense Claim Detail-custom_shipping",
+                "Expense Claim Detail-custom_column_break_shippingg",
+                "Expense Claim Detail-custom_customer",
+                "Address-contact",
+                "Material Request-created_by"
+            ]
+        ]
+    ]}
+]
