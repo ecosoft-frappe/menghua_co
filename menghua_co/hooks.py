@@ -4,7 +4,7 @@ app_publisher = "Ecosoft"
 app_description = "Menghua Co\'s ERP"
 app_email = "kittiu@ecosoft.co.th"
 app_license = "mit"
-required_apps = ["frappe/erpnext", "frappe/hrms", "ecosoft-frappe/erpnext_thailand", "kittiu/cash_holder_summary"]
+required_apps = []
 
 # Apps
 # ------------------
