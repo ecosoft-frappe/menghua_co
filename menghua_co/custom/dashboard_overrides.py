@@ -8,7 +8,7 @@ def get_dashboard_data_for_sales_order(data):
     for transaction in data["transactions"]:
         if transaction["label"] == _("Manufacturing"):
             transaction["items"].append("Manufacturing Order")
-            return data
+    return data
 
 
 def get_dashboard_data_for_work_order(data):
@@ -21,7 +21,7 @@ def get_dashboard_data_for_work_order(data):
     for transaction in data["transactions"]:
         if transaction["label"] == _("Reference"):
             transaction["items"].append("Manufacturing Order")
-            return data
+    return data
 
 
 def get_dashboard_data_for_material_request(data):
@@ -31,4 +31,4 @@ def get_dashboard_data_for_material_request(data):
     for transaction in data["transactions"]:
         if transaction["label"] == _("Manufacturing"):
             transaction["items"].append("Manufacturing Order")
-            return data
+    return data
