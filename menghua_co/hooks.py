@@ -325,6 +325,8 @@ fixtures = [
                 "Warehouse-custom_column_break_mh_detail",
                 "Warehouse-custom_shelf",
                 "Warehouse-custom_block",
+                "Work Order-custom_section_break_bqfoz",
+                "Work Order-custom_note",
                 "Expense Claim Detail-custom_section_break_shipping",
                 "Expense Claim Detail-custom_shipping",
                 "Expense Claim Detail-custom_column_break_shippingg",
