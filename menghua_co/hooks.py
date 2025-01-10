@@ -306,8 +306,6 @@ fixtures = [
                 "Material Request-title-in_list_view",
                 "Material Request-workflow_state",
                 "Material Request-main-title_field",
-                "Sales Invoice-payment_terms_template-allow_on_submit",
-                "Sales Invoice-payment_schedule-allow_on_submit",
             ]
         ]
     ]},
