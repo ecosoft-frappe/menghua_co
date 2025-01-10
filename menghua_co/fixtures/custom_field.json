@@ -891,7 +891,7 @@
   "modified": "2025-01-10 12:13:43.890109",
   "module": null,
   "name": "Manufacturing Order-custom_printed",
-  "no_copy": 0,
+  "no_copy": 1,
   "non_negative": 0,
   "options": null,
   "permlevel": 0,
