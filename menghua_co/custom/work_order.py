@@ -35,6 +35,7 @@ def create_manufacturing_order(source_name, target_doc=None, show_message=True):
     
         target.customer = sales_order.customer  
         target.delivery_date = sales_order.delivery_date
+        target.shipping = sales_order.custom_shipping
     
         if not target.get("sales_team"):
             for d in sales_order.get("sales_team") or []:
