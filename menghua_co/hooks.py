@@ -333,7 +333,8 @@ fixtures = [
                 "Expense Claim Detail-custom_customer",
                 "Address-contact",
                 "Material Request-created_by",
-                "Manufacturing Order-custom_printed",
+                "Manufacturing Order-custom_section_break_yvi1r",
+                "Manufacturing Order-custom_mo_printed",
             ]
         ]
     ]}
