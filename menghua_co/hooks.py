@@ -304,6 +304,7 @@ fixtures = [
                 "Material Request-title-in_list_view",
                 "Material Request-workflow_state",
                 "Material Request-main-title_field",
+                "Manufacturing Order-main-track_changes",
             ]
         ]
     ]},
