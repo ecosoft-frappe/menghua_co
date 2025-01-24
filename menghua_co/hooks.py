@@ -305,6 +305,8 @@ fixtures = [
                 "Material Request-workflow_state",
                 "Material Request-main-title_field",
                 "Manufacturing Order-main-track_changes",
+                "Sales Invoice-tc_name-allow_on_submit",
+                "Sales Invoice-terms-allow_on_submit",
             ]
         ]
     ]},
