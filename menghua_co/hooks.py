@@ -286,6 +286,8 @@ fixtures = [
                 "Sales Order Item-actual_qty-in_list_view",
                 "Sales Order Item-rate-columns",
                 "Sales Order Item-warehouse-in_list_view",
+                "Sales Order-tc_name-allow_on_submit",
+                "Sales Order-terms-allow_on_submit",
                 "Purchase Invoice-supplier_invoice_details-collapsible",
                 "Address-address_type-description",
                 "Address-address_title-description",
