@@ -340,6 +340,7 @@ fixtures = [
                 "Manufacturing Order-custom_mo_printed",
                 "Sales Order-custom_shipping",
                 "Sales Invoice-custom_shipping",
+                "Address-custom_default_shipping",
             ]
         ]
     ]}
