@@ -39,6 +39,7 @@
   "format_front",
   "print_type_front",
   "coating",
+  "coating_detail",
   "design",
   "column_break_design",
   "plate_no_front",
@@ -219,7 +220,7 @@
    "fieldname": "coating",
    "fieldtype": "Select",
    "label": "Coating",
-   "options": "\u0e44\u0e21\u0e48\u0e40\u0e04\u0e25\u0e37\u0e2d\u0e1a\n\u0e2d\u0e32\u0e1a\u0e40\u0e07\u0e32\nUV\u0e40\u0e07\u0e32\nUV\u0e40\u0e07\u0e32\u0e40\u0e27\u0e49\u0e19\u0e0a\u0e48\u0e2d\u0e07\u0e0a\u0e37\u0e48\u0e2d\u0e0a\u0e31\u0e49\u0e19\u0e27\u0e34\u0e0a\u0e32\nUV\u0e14\u0e49\u0e32\u0e19\nPVC\u0e14\u0e49\u0e32\u0e19\nPVC\u0e40\u0e07\u0e32"
+   "options": "\u0e44\u0e21\u0e48\u0e40\u0e04\u0e25\u0e37\u0e2d\u0e1a\n\u0e2d\u0e32\u0e1a\u0e40\u0e07\u0e32\nUV\u0e40\u0e07\u0e32\nUV\u0e40\u0e07\u0e32\u0e40\u0e27\u0e49\u0e19\u0e0a\u0e48\u0e2d\u0e07\u0e0a\u0e37\u0e48\u0e2d\u0e0a\u0e31\u0e49\u0e19\u0e27\u0e34\u0e0a\u0e32\nUV\u0e14\u0e49\u0e32\u0e19\nPVC\u0e14\u0e49\u0e32\u0e19\nPVC\u0e40\u0e07\u0e32\n\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e40\u0e2d\u0e07"
   },
   {
    "fieldname": "design",
@@ -422,12 +423,18 @@
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "MO-.YYYY.-"
+  },
+  {
+   "depends_on": "eval:doc.coating==\"\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e40\u0e2d\u0e07\"",
+   "fieldname": "coating_detail",
+   "fieldtype": "Text",
+   "label": "Coating Detail"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-17 12:35:02.504476",
+ "modified": "2025-02-28 15:22:11.557348",
  "modified_by": "Administrator",
  "module": "Menghua Co",
  "name": "Manufacturing Order",
