@@ -208,7 +208,7 @@
    "fieldname": "format_front",
    "fieldtype": "Select",
    "label": "Fromat",
-   "options": "\u0e44\u0e21\u0e48\u0e1e\u0e34\u0e21\u0e1e\u0e4c\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e40\u0e14\u0e34\u0e21)\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e43\u0e2b\u0e21\u0e48)\n\u0e1a\u0e25\u0e47\u0e2d\u0e01"
+   "options": "\u0e44\u0e21\u0e48\u0e1e\u0e34\u0e21\u0e1e\u0e4c\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e40\u0e14\u0e34\u0e21)\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e43\u0e2b\u0e21\u0e48)\n\u0e1a\u0e25\u0e47\u0e2d\u0e01"
   },
   {
    "fieldname": "print_type_front",
@@ -340,7 +340,7 @@
    "fieldname": "format_back",
    "fieldtype": "Select",
    "label": "Format",
-   "options": "\u0e44\u0e21\u0e48\u0e1e\u0e34\u0e21\u0e1e\u0e4c\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e40\u0e14\u0e34\u0e21)\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e43\u0e2b\u0e21\u0e48)"
+   "options": "\u0e44\u0e21\u0e48\u0e1e\u0e34\u0e21\u0e1e\u0e4c\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e40\u0e14\u0e34\u0e21)\n\u0e40\u0e1e\u0e25\u0e17 (\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e43\u0e2b\u0e21\u0e48)"
   },
   {
    "fieldname": "work_order",
@@ -434,7 +434,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-28 16:10:09.796458",
+ "modified": "2025-02-28 17:08:11.729134",
  "modified_by": "Administrator",
  "module": "Menghua Co",
  "name": "Manufacturing Order",
