@@ -427,14 +427,14 @@
   {
    "depends_on": "eval:doc.coating==\"\u0e01\u0e33\u0e2b\u0e19\u0e14\u0e40\u0e2d\u0e07\"",
    "fieldname": "coating_detail",
-   "fieldtype": "Text",
+   "fieldtype": "Data",
    "label": "Coating Detail"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-28 15:22:11.557348",
+ "modified": "2025-02-28 16:10:09.796458",
  "modified_by": "Administrator",
  "module": "Menghua Co",
  "name": "Manufacturing Order",
