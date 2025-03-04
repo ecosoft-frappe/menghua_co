@@ -132,9 +132,12 @@ after_migrate = ["menghua_co.custom.print_format_setting.set_print_format_as_dis
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+    "Sales Invoice": "menghua_co.custom.sales_invoice.SalesInvoiceMH",
+    "Delivery Note": "menghua_co.custom.delivery_note.DeliveryNoteMH",
+    "Purchase Invoice": "menghua_co.custom.purchase_invoice.PurchaseInvoiceMH",
+    "Purchase Receipt": "menghua_co.custom.purchase_receipt.PurchaseReceiptMH",
+}
 
 # Document Events
 # ---------------
