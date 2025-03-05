@@ -137,6 +137,13 @@ override_doctype_class = {
     "Delivery Note": "menghua_co.custom.delivery_note.DeliveryNoteMH",
     "Purchase Invoice": "menghua_co.custom.purchase_invoice.PurchaseInvoiceMH",
     "Purchase Receipt": "menghua_co.custom.purchase_receipt.PurchaseReceiptMH",
+    "Sales Invoice": "menghua_co.custom.custom_validation.CustomSalesInvoice",
+    "Sales Order": "menghua_co.custom.custom_validation.CustomSalesOrder",
+    "Purchase Invoice": "menghua_co.custom.custom_validation.CustomPurchaseInvoice",
+    "Purchase Receipt": "menghua_co.custom.custom_validation.CustomPurchaseReceipt",
+    "Purchase Order": "menghua_co.custom.custom_validation.CustomPurchaseOrder",
+    "Supplier Quotation": "menghua_co.custom.custom_validation.CustomSupplierQuotation",
+    "Delivery Note": "menghua_co.custom.custom_validation.CustomDeliveryNote",
 }
 
 # Document Events
