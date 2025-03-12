@@ -144,6 +144,7 @@ override_doctype_class = {
     "Purchase Order": "menghua_co.custom.custom_validation.CustomPurchaseOrder",
     "Supplier Quotation": "menghua_co.custom.custom_validation.CustomSupplierQuotation",
     "Delivery Note": "menghua_co.custom.custom_validation.CustomDeliveryNote",
+    "Sales Order": "menghua_co.custom.sales_order.CustomlinkSalesOrder",
 }
 
 # Document Events
