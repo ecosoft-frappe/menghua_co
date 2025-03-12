@@ -144,6 +144,7 @@ override_doctype_class = {
     "Purchase Order": "menghua_co.custom.custom_validation.CustomPurchaseOrder",
     "Supplier Quotation": "menghua_co.custom.custom_validation.CustomSupplierQuotation",
     "Delivery Note": "menghua_co.custom.custom_validation.CustomDeliveryNote",
+    "Sales Order": "menghua_co.custom.sales_order.CustomlinkSalesOrder",
 }
 
 # Document Events
@@ -205,6 +206,7 @@ override_doctype_dashboards = {
 # exempt linked doctypes from being automatically cancelled
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
+auto_cancel_exempted_doctypes = ["Sales Invoice", "Delivery Note", "Manufacturing Order"]
 # Ignore links to specified DocTypes when deleting documents
 # -----------------------------------------------------------
 
