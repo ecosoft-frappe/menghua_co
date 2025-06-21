@@ -271,6 +271,10 @@ doc_events = {
     },
     "Material Request": {
         "before_insert": "menghua_co.custom.material_request.set_created_by_full_name"
+    },
+    "Sales Invoice": {
+        "on_submit": "menghua_co.custom.sales_invoice.update_credit_note_flag",
+        "on_cancel": "menghua_co.custom.sales_invoice.update_credit_note_flag"
     }
 }
 
