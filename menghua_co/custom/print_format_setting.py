@@ -14,3 +14,8 @@ def set_print_format_as_disable():
     ]
     for print_format in print_formats:
         frappe.db.set_value("Print Format", print_format, "disabled", 1)
+
+def set_print_format_as_add_comment():
+    print_formats = frappe.get_list("Print Format", filters={"module": "Menghua Co"}, pluck="name")
+    for print_format in print_formats:
+        frappe.db.set_value("Print Format", print_format, "add_comment_info", 1)

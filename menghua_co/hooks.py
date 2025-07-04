@@ -92,7 +92,10 @@ required_apps = ["frappe/erpnext", "frappe/hrms", "ecosoft-frappe/erpnext_thaila
 # before_uninstall = "menghua_co.uninstall.before_uninstall"
 # after_uninstall = "menghua_co.uninstall.after_uninstall"
 
-after_migrate = ["menghua_co.custom.print_format_setting.set_print_format_as_disable"]
+after_migrate = [
+    "menghua_co.custom.print_format_setting.set_print_format_as_disable",
+    "menghua_co.custom.print_format_setting.set_print_format_as_add_comment",
+]
 
 # Integration Setup
 # ------------------
