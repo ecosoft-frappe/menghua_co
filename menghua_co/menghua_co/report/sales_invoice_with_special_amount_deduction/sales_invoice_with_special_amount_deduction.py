@@ -101,34 +101,36 @@ def get_columns():
     ]
 
 def get_data(filters):
-
+    
     base_url = frappe.utils.get_url()
 
-    conditions = ["si.docstatus = 1"]
+    query_filters = {"si.docstatus": 1}
     values = {}
 
     if filters.get('from_date'):
-        conditions.append("si.due_date >= %(from_date)s")
+        query_filters["si.due_date >= %(from_date)s"] = None
         values['from_date'] = filters['from_date']
 
     if filters.get('to_date'):
-        conditions.append("si.due_date <= %(to_date)s")
+        query_filters["si.due_date <= %(to_date)s"] = None
         values['to_date'] = filters['to_date']
 
     if filters.get('customer'):
-        conditions.append("si.customer = %(customer)s")
+        query_filters["si.customer = %(customer)s"] = None
         values['customer'] = filters['customer']
 
     if filters.get('sales_person'):
-        conditions.append("st.sales_person = %(sales_person)s")
+        query_filters["st.sales_person = %(sales_person)s"] = None
         values['sales_person'] = filters['sales_person']
 
     if filters.get('sales_order'):
-        conditions.append("sii.sales_order = %(sales_order)s")
+        query_filters["sii.sales_order = %(sales_order)s"] = None
         values['sales_order'] = filters['sales_order']
 
     if filters.get('paid_only'):
-        conditions.append("si.status = 'Paid'")
+        query_filters["si.status = 'Paid'"] = None
+
+    conditions = " AND ".join(query_filters.keys())
 
     query = f"""
         SELECT 
@@ -188,7 +190,7 @@ def get_data(filters):
                 AND pe.docstatus = 1
             GROUP BY per.reference_name
         ) paid ON paid.reference_name = si.name
-        WHERE { ' AND '.join(conditions) }
+        WHERE {conditions}
         GROUP BY si.name
         ORDER BY si.name, si.due_date
     """
