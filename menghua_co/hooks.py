@@ -95,6 +95,7 @@ required_apps = ["frappe/erpnext", "frappe/hrms", "ecosoft-frappe/erpnext_thaila
 after_migrate = [
     "menghua_co.custom.print_format_setting.set_print_format_as_disable",
     "menghua_co.custom.print_format_setting.set_print_format_as_add_comment",
+    "menghua_co.custom.report.set_report_as_disable",
 ]
 
 # Integration Setup
