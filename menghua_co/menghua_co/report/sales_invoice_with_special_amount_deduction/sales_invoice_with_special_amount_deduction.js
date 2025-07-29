@@ -4,16 +4,14 @@
 frappe.query_reports["Sales Invoice With Special Amount Deduction"] = {
 	"filters": [
 		{
-			label: __("From Date"),
-			fieldname: "from_date",
+			label: __("From Payment Due Date"),
+			fieldname: "from_payment_due_date",
 			fieldtype: "Date",
-			reqd: 1,
 		},
 		{
-			label: __("To Date"),
-			fieldname: "to_date",
+			label: __("To Payment Due Date"),
+			fieldname: "to_payment_due_date",
 			fieldtype: "Date",
-			reqd: 1,
 		},
 		{
 			label: __("Customer"),

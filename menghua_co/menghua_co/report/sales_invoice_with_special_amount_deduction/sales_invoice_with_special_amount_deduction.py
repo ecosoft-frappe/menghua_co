@@ -101,36 +101,36 @@ def get_columns():
     ]
 
 def get_data(filters):
-    
+
     base_url = frappe.utils.get_url()
 
-    query_filters = {"si.docstatus": 1}
+    query_filters = ["si.docstatus = 1"]
     values = {}
 
-    if filters.get('from_date'):
-        query_filters["si.due_date >= %(from_date)s"] = None
-        values['from_date'] = filters['from_date']
+    if filters.get('from_payment_due_date'):
+        query_filters.append("si.due_date >= %(from_payment_due_date)s")
+        values['from_payment_due_date'] = filters['from_payment_due_date']
 
-    if filters.get('to_date'):
-        query_filters["si.due_date <= %(to_date)s"] = None
-        values['to_date'] = filters['to_date']
+    if filters.get('to_payment_due_date'):
+        query_filters.append("si.due_date <= %(to_payment_due_date)s")
+        values['to_payment_due_date'] = filters['to_payment_due_date']
 
     if filters.get('customer'):
-        query_filters["si.customer = %(customer)s"] = None
+        query_filters.append("si.customer = %(customer)s")
         values['customer'] = filters['customer']
 
     if filters.get('sales_person'):
-        query_filters["st.sales_person = %(sales_person)s"] = None
+        query_filters.append("st.sales_person = %(sales_person)s")
         values['sales_person'] = filters['sales_person']
 
     if filters.get('sales_order'):
-        query_filters["sii.sales_order = %(sales_order)s"] = None
+        query_filters.append("sii.sales_order = %(sales_order)s")
         values['sales_order'] = filters['sales_order']
 
     if filters.get('paid_only'):
-        query_filters["si.status = 'Paid'"] = None
+        query_filters.append("si.status = 'Paid'")
 
-    conditions = " AND ".join(query_filters.keys())
+    conditions = " AND ".join(query_filters)
 
     query = f"""
         SELECT 
@@ -192,7 +192,7 @@ def get_data(filters):
         ) paid ON paid.reference_name = si.name
         WHERE {conditions}
         GROUP BY si.name
-        ORDER BY si.name, si.due_date
+        ORDER BY si.due_date ASC
     """
 
     return frappe.db.sql(query, values, as_dict=1)
