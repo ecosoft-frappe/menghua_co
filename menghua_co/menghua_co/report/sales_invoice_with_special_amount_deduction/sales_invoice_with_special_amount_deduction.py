@@ -107,27 +107,27 @@ def get_data(filters):
     query_filters = ["si.docstatus = 1"]
     values = {}
 
-    if filters.get('from_payment_due_date'):
-        query_filters.append("si.due_date >= %(from_payment_due_date)s")
-        values['from_payment_due_date'] = filters['from_payment_due_date']
+    if filters.get("from_due_date"):
+        query_filters.append("si.due_date >= %(from_due_date)s")
+        values["from_due_date"] = filters["from_due_date"]
 
-    if filters.get('to_payment_due_date'):
-        query_filters.append("si.due_date <= %(to_payment_due_date)s")
-        values['to_payment_due_date'] = filters['to_payment_due_date']
+    if filters.get("to_due_date"):
+        query_filters.append("si.due_date <= %(to_due_date)s")
+        values["to_due_date"] = filters["to_due_date"]
 
-    if filters.get('customer'):
+    if filters.get("customer"):
         query_filters.append("si.customer = %(customer)s")
-        values['customer'] = filters['customer']
+        values["customer"] = filters["customer"]
 
-    if filters.get('sales_person'):
+    if filters.get("sales_person"):
         query_filters.append("st.sales_person = %(sales_person)s")
-        values['sales_person'] = filters['sales_person']
+        values["sales_person"] = filters["sales_person"]
 
-    if filters.get('sales_order'):
+    if filters.get("sales_order"):
         query_filters.append("sii.sales_order = %(sales_order)s")
-        values['sales_order'] = filters['sales_order']
+        values["sales_order"] = filters["sales_order"]
 
-    if filters.get('paid_only'):
+    if filters.get("paid_only"):
         query_filters.append("si.status = 'Paid'")
 
     conditions = " AND ".join(query_filters)
@@ -186,8 +186,10 @@ def get_data(filters):
                 MAX(pe.posting_date) AS pe_date
             FROM `tabPayment Entry Reference` per
             JOIN `tabPayment Entry` pe ON pe.name = per.parent
+            JOIN `tabSales Invoice` paid_invoice ON paid_invoice.name = per.reference_name
             WHERE per.reference_doctype = 'Sales Invoice'
                 AND pe.docstatus = 1
+                AND paid_invoice.status = 'Paid'
             GROUP BY per.reference_name
         ) paid ON paid.reference_name = si.name
         WHERE {conditions}
