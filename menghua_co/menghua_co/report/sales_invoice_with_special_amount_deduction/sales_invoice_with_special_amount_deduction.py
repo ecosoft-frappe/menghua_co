@@ -63,9 +63,33 @@ def get_columns():
             "width": 0
         },
         {
+            "fieldname": "remarks_special_amount_1",
+            "label": _("Remark Discount (Special 1)"),
+            "fieldtype": "Data",
+            "width": 0
+        },
+        {
             "fieldname": "contribution_special_2",
             "label": _("Contribution (Special 2)"),
             "fieldtype": "Currency",
+            "width": 0
+        },
+        {
+            "fieldname": "remarks_special_amount_2",
+            "label": _("Remark Contribution (Special 2)"),
+            "fieldtype": "Data",
+            "width": 0
+        },
+        {
+            "fieldname": "commission_special_3",
+            "label": _("Commission (Special 3"),
+            "fieldtype": "Currency",
+            "width": 0
+        },
+        {
+            "fieldname": "remarks_special_amount_3",
+            "label": _("Remark Commission (Special 3"),
+            "fieldtype": "Data",
             "width": 0
         },
         {
@@ -141,7 +165,11 @@ def get_data(filters):
             GROUP_CONCAT(DISTINCT sii.sales_order ORDER BY sii.sales_order SEPARATOR ', ') AS ref_sales_order,
             si.net_total AS invoice_amount_net,
             IFNULL(si.custom_special_amount_1_discount, 0) AS discount_special_1,
+            IFNULL(si.custom_remarks_special_amount_1, '') AS remarks_special_amount_1,
             IFNULL(si.custom_special_amount_2_contribution, 0) AS contribution_special_2,
+            IFNULL(si.custom_remarks_special_amount_2, '') AS remarks_special_amount_2,
+            IFNULL(si.custom_special_amount_3_commission, 0) AS commission_special_3,
+            IFNULL(si.custom_remarks_special_amount_3, '') AS remarks_special_amount_3,
             (
                 si.net_total 
                 - IFNULL(si.custom_special_amount_1_discount, 0) 
