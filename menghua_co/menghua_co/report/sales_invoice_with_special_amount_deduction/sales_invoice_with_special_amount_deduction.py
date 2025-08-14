@@ -93,6 +93,12 @@ def get_columns():
             "width": 0
         },
         {
+            "fieldname": "total_special_amounts",
+            "label": _("Total Special Amounts"),
+            "fieldtype": "Currency",
+            "width": 0
+        },
+        {
             "fieldname": "net_amount",
             "label": _("Net Amount"),
             "fieldtype": "Currency",
@@ -170,6 +176,11 @@ def get_data(filters):
             IFNULL(si.custom_remarks_special_amount_2, '') AS remarks_special_amount_2,
             IFNULL(si.custom_special_amount_3_commission, 0) AS commission_special_3,
             IFNULL(si.custom_remarks_special_amount_3, '') AS remarks_special_amount_3,
+            (
+                IFNULL(si.custom_special_amount_1_discount, 0)
+                + IFNULL(si.custom_special_amount_2_contribution, 0)
+                + IFNULL(si.custom_special_amount_3_commission, 0)
+            ) AS total_special_amounts,
             (
                 si.net_total 
                 - IFNULL(si.custom_special_amount_1_discount, 0) 
