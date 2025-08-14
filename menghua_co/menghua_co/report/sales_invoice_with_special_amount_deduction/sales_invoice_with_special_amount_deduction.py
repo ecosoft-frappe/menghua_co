@@ -185,16 +185,22 @@ def get_data(filters):
                 si.net_total 
                 - IFNULL(si.custom_special_amount_1_discount, 0) 
                 - IFNULL(si.custom_special_amount_2_contribution, 0)
+                - IFNULL(si.custom_special_amount_3_commission, 0)
             ) AS net_amount,
             CASE 
                 WHEN si.net_total > 0 THEN 
                     ROUND(
                         (
-                            (IFNULL(si.custom_special_amount_1_discount, 0) + IFNULL(si.custom_special_amount_2_contribution, 0))
-                            * 100
-                        ) / si.net_total, 2
+                            si.net_total
+                            - (
+                                si.net_total
+                                - IFNULL(si.custom_special_amount_1_discount, 0)
+                                - IFNULL(si.custom_special_amount_2_contribution, 0)
+                                - IFNULL(si.custom_special_amount_3_commission, 0)
+                            )
+                        ) * 100 / si.net_total, 2
                     )
-                ELSE 0 
+                ELSE 0
             END AS percent_decrease,
             si.due_date,
             paid.pe_date AS paid_date,
