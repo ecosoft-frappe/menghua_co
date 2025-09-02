@@ -52,7 +52,8 @@ class ReceivablePayableReport:
 		self.qb_selection_filter = []
 		self.ple = qb.DocType("Payment Ledger Entry")
 		self.filters.report_date = getdate(self.filters.report_date or nowdate())
-		self.filters.posting_date = getdate(self.filters.posting_date or nowdate())
+		self.filters.start_date = getdate(self.filters.start_date or "1900-01-01")
+		self.filters.end_date = getdate(self.filters.end_date or "2500-12-31")
 		self.age_as_on = (
 			getdate(nowdate())
 			if "calculate_ageing_with" not in self.filters
@@ -62,7 +63,7 @@ class ReceivablePayableReport:
 
 		if not self.filters.range:
 			self.filters.range = "30, 60, 90, 120"
-		self.ranges = [num.strip() for num in self.filters.range.split(",") if num.strip().isdigit()]
+		self.ranges = ["-1"] + [num.strip() for num in self.filters.range.split(",") if num.strip().isdigit()]
 		self.range_numbers = [num for num in range(1, len(self.ranges) + 2)]
 		self.ple_fetch_method = (
 			frappe.db.get_single_value("Accounts Settings", "receivable_payable_fetch_method")
@@ -413,7 +414,7 @@ class ReceivablePayableReport:
 		# set outstanding for all the accumulated balances
 		# as we can use this to filter out invoices without outstanding
 		for _key, row in self.voucher_balance.items():
-			if row.posting_date > self.filters.posting_date:
+			if not (self.filters.start_date <= row.posting_date <= self.filters.end_date):
 				continue
 			row.outstanding = flt(row.invoiced - row.paid - row.credit_note, self.currency_precision)
 			row.outstanding_in_account_currency = flt(
@@ -871,13 +872,13 @@ class ReceivablePayableReport:
 		self.get_ageing_data(entry_date, row)
 
 		# ageing buckets should not have amounts if due date is not reached
-		if getdate(entry_date) > getdate(self.age_as_on):
-			[setattr(row, f"range{i}", 0.0) for i in self.range_numbers]
+		# if getdate(entry_date) > getdate(self.age_as_on):
+		# 	[setattr(row, f"range{i}", 0.0) for i in self.range_numbers]
 
 		row.total_due = sum(row[f"range{i}"] for i in self.range_numbers)
 
 	def get_ageing_data(self, entry_date, row):
-		# [0-30, 30-60, 60-90, 90-120, 120-above]
+		# [Not Due, 0-30, 30-60, 60-90, 90-120, 120-above]
 		[setattr(row, f"range{i}", 0.0) for i in self.range_numbers]
 
 		if not (self.age_as_on and entry_date):
@@ -1273,7 +1274,10 @@ class ReceivablePayableReport:
 
 		prev_range_value = 0
 		for idx, curr_range_value in enumerate(ranges):
-			label = f"{prev_range_value}-{curr_range_value}"
+			if curr_range_value == "-1":
+				label = f"Not Due"
+			else:
+				label = f"{prev_range_value}-{curr_range_value}"
 			self.add_column(label=label, fieldname="range" + str(idx + 1))
 
 			self.ageing_column_labels.append(label)

@@ -21,10 +21,14 @@ frappe.query_reports["รายงานลูกหนี้คงค้าง"
 			hidden: 1,
 		},
 		{
-			fieldname: "posting_date",
-			label: __("As Of Posting Date"),
+			fieldname: "start_date",
+			label: __("Start Date"),
 			fieldtype: "Date",
-			default: frappe.datetime.get_today(),
+		},
+		{
+			fieldname: "end_date",
+			label: __("End Date"),
+			fieldtype: "Date",
 		},
 		{
 			fieldname: "finance_book",
