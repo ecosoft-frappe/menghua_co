@@ -1146,44 +1146,7 @@ class ReceivablePayableReport:
 			options="party_type",
 			width=180,
 		)
-		if self.account_type == "Receivable":
-			label = _("Receivable Account")
-		elif self.account_type == "Payable":
-			label = _("Payable Account")
-		else:
-			label = _("Party Account")
 
-		self.add_column(
-			label=label,
-			fieldname="party_account",
-			fieldtype="Link",
-			options="Account",
-			width=180,
-		)
-
-		if self.party_naming_by == "Naming Series":
-			if self.account_type == "Payable":
-				label = _("Supplier Name")
-				fieldname = "supplier_name"
-			else:
-				label = _("Customer Name")
-				fieldname = "customer_name"
-			self.add_column(
-				label=label,
-				fieldname=fieldname,
-				fieldtype="Data",
-			)
-
-		if self.account_type == "Receivable":
-			self.add_column(
-				_("Customer Contact"),
-				fieldname="customer_primary_contact",
-				fieldtype="Link",
-				options="Contact",
-			)
-
-		self.add_column(label=_("Cost Center"), fieldname="cost_center", fieldtype="Data")
-		self.add_column(label=_("Voucher Type"), fieldname="voucher_type", fieldtype="Data")
 		self.add_column(
 			label=_("Voucher No"),
 			fieldname="voucher_no",
@@ -1254,6 +1217,48 @@ class ReceivablePayableReport:
 
 		if self.filters.show_remarks:
 			self.add_column(label=_("Remarks"), fieldname="remarks", fieldtype="Text", width=200)
+
+		# Move to last column in table report
+
+		if self.account_type == "Receivable":
+			label = _("Receivable Account")
+		elif self.account_type == "Payable":
+			label = _("Payable Account")
+		else:
+			label = _("Party Account")
+
+		self.add_column(
+			label=label,
+			fieldname="party_account",
+			fieldtype="Link",
+			options="Account",
+			width=180,
+		)
+
+		if self.party_naming_by == "Naming Series":
+			if self.account_type == "Payable":
+				label = _("Supplier Name")
+				fieldname = "supplier_name"
+			else:
+				label = _("Customer Name")
+				fieldname = "customer_name"
+			self.add_column(
+				label=label,
+				fieldname=fieldname,
+				fieldtype="Data",
+			)
+
+		if self.account_type == "Receivable":
+			self.add_column(
+				_("Customer Contact"),
+				fieldname="customer_primary_contact",
+				fieldtype="Link",
+				options="Contact",
+			)
+
+		self.add_column(label=_("Cost Center"), fieldname="cost_center", fieldtype="Data")
+		self.add_column(label=_("Voucher Type"), fieldname="voucher_type", fieldtype="Data")
+
 
 	def add_column(self, label, fieldname=None, fieldtype="Currency", options=None, width=120):
 		if not fieldname:
